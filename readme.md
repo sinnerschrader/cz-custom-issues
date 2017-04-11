@@ -22,8 +22,15 @@ A commititizen helper with advanced issue config.
 
 - [Links](#links)
 - [Getting started](#getting-started)
+- [Setup](#setup)
+- [Config](#config)
+  * [types](#types)
+  * [scopes](#scopes)
+  * [scopeOverrides](#scopeoverrides)
+  * [allowCustomScopes](#allowcustomscopes)
+  * [allowBreakingChanges](#allowbreakingchanges)
 - [Developing](#developing)
-- [setup](#setup)
+- [Similar projects / inspiration](#similar-projects--inspiration)
 
 <!-- tocstop -->
 
@@ -40,16 +47,17 @@ yarn add cz-custom-issues -D
 ## npm i cz-custom-issues -D
 ```
 
-## Developing
-
-To start a dev server and start developing try the following commands
-
-* `test`: runs test and lints files
-* `run lint`: lints javascript files
-
-## setup
+## Setup
 
 to setup the plugin simply extend you config in your `package.json`
+the type is currently optional and simply serves as an indicator.
+Keep this setting to make future updates easier.
+
+The prefix can be used to add a project prefix to issue (e.g. jira issues): `ABC // => #ABC-123`
+
+This allows easy listing of issues. The prefix will be added automatically.
+
+`23: server crashes, 27: server slows down, 21: page not available`
 
 ```json
 {
@@ -68,6 +76,110 @@ to setup the plugin simply extend you config in your `package.json`
 }
 ```
 
-Take a look at the [example config file](https://github.com/sinnerschrader/cz-custom-issues/blob/master/cz-config.example.js) to see the available options.
+## Config
+
+You can add your own flow to comitizen. See [cz-customizable](https://github.com/leonardoanalista/cz-customizable) for the original implementation.
+
+### types
+
+Custom commit types
+
+- types
+  - [type]
+    - name (used in promt as info, use whitespaces and newlines for alignment)
+    - value (used for commit message/prefix)
+
+```js
+{
+  types: [
+    {
+      value: 'feat',
+      name: 'feature: Adds a new feature'
+    },
+    {
+      value: 'fix',
+      name: 'bugfix:  Fixes a bug'
+    }
+    // ...
+  ]
+}
+```
+
+### scopes
+
+Custom default scopes
+
+- scopes
+  - [type]
+    - name (used in promt and commit message)
+
+```js
+{
+  scopes: [
+    { name: 'client' },
+    { name: 'server' }
+    // ...
+  ]
+}
+```
+
+### scopeOverrides
+
+Override scopes per type
+
+- scopeOverrides
+  - [type]
+    - name (used in promt and commit message)
+
+```js
+{
+  scopeOverrides: {
+    fix: [{ name: 'windows' }, { name: 'osx' }, { name: 'linux' }],
+    docs: [{ name: 'new' }, { name: 'change' }, { name: 'readme' }],
+    style: [{ name: 'format' }, { name: 'whitespace' }, { name: 'fix' }]
+  }
+}
+```
+
+### allowCustomScopes
+
+Toggle custom scopes
+
+- allowCustomScopes
+  - Boolean
+
+```js
+{
+  allowCustomScopes: true
+}
+```
+
+### allowBreakingChanges
+
+Limit breaking chages to types
+
+- allowBreakingChanges
+  - [...types]
+
+```js
+{
+  allowBreakingChanges: ['feat', 'fix']
+}
+```
+
+Take a look at the [example config file](https://github.com/sinnerschrader/cz-custom-issues/blob/master/cz-config.example.js)
+
+## Developing
+
+To contribute make sure all test pass and the coding style is consistent
+
+* `test`: runs test and lints files
+* `run lint`: lints javascript files
+
+## Similar projects / inspiration
+
+- [cz-customizable](https://github.com/leonardoanalista/cz-customizable) + credits (forked from this project)
+- [cz-jira-simple-changelog](https://github.com/jalopez/cz-jira-simple-changelog) (limited to jira issues)
+- ...probably several others
 
 
