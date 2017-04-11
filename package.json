@@ -92,6 +92,11 @@
       }
     }
   },
+  "nyc": {
+    "exclude": [
+      "src/**/spec/*.js"
+    ]
+  },
   "xo": {
     "space": true,
     "semicolon": false
