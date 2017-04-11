@@ -16,6 +16,7 @@ import {pluginName} from './helpers'
  */
 const readIssueSettings = (fallback = {}) => {
   const pkg = findConfig.require('package.json', {home: false})
+  // istanbul ignore if
   if (pkg) {
     const {config} = pkg
     if (config && pluginName in config) {
@@ -24,10 +25,8 @@ const readIssueSettings = (fallback = {}) => {
         return czConfig.issues || fallback
       }
     }
-    // istanbul ignore next
     return fallback
   }
-  // istanbul ignore next
   log.warn(`Unable to find a configuration file. Please refer to documentation to learn how to set up: https://github.com/sinnerschrader/${pluginName}"`)
 }
 /**
