@@ -24,6 +24,7 @@ A commititizen helper with advanced issue config.
 - [Getting started](#getting-started)
 - [Developing](#developing)
   * [Examples (serves docs-folder/gh-pages)](#examples-serves-docs-foldergh-pages)
+  * [setup](#setup)
 
 <!-- tocstop -->
 
