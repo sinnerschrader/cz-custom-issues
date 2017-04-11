@@ -92,7 +92,7 @@ Custom commit types
 
 - types
   - [type]
-    - name (used in promt as info, use whitespaces and newlines for alignment)
+    - name (used in prompt as info, use whitespaces and newlines for alignment)
     - value (used for commit message/prefix)
 
 ```js
@@ -117,7 +117,7 @@ Custom default scopes
 
 - scopes
   - [type]
-    - name (used in promt and commit message)
+    - name (used in prompt and commit message)
 
 ```js
 {
@@ -135,7 +135,7 @@ Override scopes per type
 
 - scopeOverrides
   - [type]
-    - name (used in promt and commit message)
+    - name (used in prompt and commit message)
 
 ```js
 {
