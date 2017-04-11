@@ -40,12 +40,14 @@ jspm_packages
 spec
 
 # source
+*.gif
 src
 scripts
-scripts
+lib/spec
 docs
 demo
+yarn.lock
 .bithoundrc
 .travis.yml
 jsdoc.json
-package.config.json
+cz-config.js
