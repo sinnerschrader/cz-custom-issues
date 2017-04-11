@@ -63,7 +63,7 @@ This allows easy listing of issues. The prefix will be added automatically.
 
 `23: server crashes, 27: server slows down, 21: page not available`
 
-![example gif](https://raw.githubusercontent.com/sinnerschrader/cz-custom-issues/master/cz.gif)
+![example gif](https://raw.githubusercontent.com/sinnerschrader/cz-custom-issues/master/cz2.gif)
 
 ```json
 {
