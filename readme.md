@@ -20,6 +20,7 @@ A commititizen helper with advanced issue config.
 
 <!-- toc -->
 
+- [Example output](#example-output)
 - [Links](#links)
 - [Getting started](#getting-started)
 - [Setup](#setup)
@@ -34,8 +35,24 @@ A commititizen helper with advanced issue config.
 
 <!-- tocstop -->
 
-
 ![example gif](https://raw.githubusercontent.com/sinnerschrader/cz-custom-issues/master/cz.gif)
+
+## Example output
+
+The output follow the [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
+and is easy to read for reviewers or project managers.
+
+```shell
+feat(new):  added config
+
+options can now be changed
+
+ISSUES CLOSED:
+ - #12: add options
+ - #14: configuration
+
+BREAKING CHANGE: new options
+```
 
 
 ## Links
@@ -44,7 +61,7 @@ A commititizen helper with advanced issue config.
 
 ## Getting started
 
-```shell
+```
 ## use yarn
 yarn add cz-custom-issues -D
 ## or npm
@@ -53,15 +70,21 @@ yarn add cz-custom-issues -D
 
 ## Setup
 
-to setup the plugin simply extend you config in your `package.json`
-the type is currently optional and simply serves as an indicator.
-Keep this setting to make future updates easier.
+to setup the plugin simply extend you config in your `package.json`.
 
-The prefix can be used to add a project prefix to issue (e.g. jira issues): `ABC // => #ABC-123`
+* The "type" is currently optional and simply serves as an indicator. Keep this setting to make future updates easier.
+* The "prefix" can be used to add a project prefix to issue (e.g. jira issues): `ABC // => #ABC-123`
 
 This allows easy listing of issues. The prefix will be added automatically.
 
 `23: server crashes, 27: server slows down, 21: page not available`
+
+```
+ISSUES CLOSED:
+ - #ABC-23: server crashes
+ - #ABC-27: server slows down
+ - #ABC-21: page not available
+```
 
 ![example gif](https://raw.githubusercontent.com/sinnerschrader/cz-custom-issues/master/cz2.gif)
 
