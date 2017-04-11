@@ -41,7 +41,6 @@
   "dependencies": {
     "editor": "^1.0.0",
     "find-config": "^1.0.0",
-    "inquirer": "^3.0.6",
     "temp": "^0.8.3",
     "winston": "^2.3.1",
     "word-wrap": "^1.2.1"
