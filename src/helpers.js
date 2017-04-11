@@ -39,7 +39,7 @@ const wrapOptions = {
  *
  * @returns {string} returns the wrapped content or an empty string
  */
-const wrapContent = content => wrap(content, wrapOptions) || ''
+const wrapContent = content => content ? wrap(content, wrapOptions) || '' : ''
 
 /**
  * Trims the content and returns
@@ -47,7 +47,7 @@ const wrapContent = content => wrap(content, wrapOptions) || ''
  *
  * @returns {string} returns a trimmed version of the input
  */
-const trim = content => content.trim()
+const trim = content => content ? content.trim() : ''
 
 /**
  * Clips the content and returns
@@ -55,7 +55,7 @@ const trim = content => content.trim()
  *
  * @returns {string} returns a trimmed version of the input
  */
-const clipLine = (content, width = maxWidth) => content.slice(0, width)
+const clipLine = (content, width = maxWidth) => content ? content.slice(0, width) : ''
 
 /**
  * Escape some special characters
@@ -63,7 +63,7 @@ const clipLine = (content, width = maxWidth) => content.slice(0, width)
  *
  * @returns {string} returns the input with escaped special characters
  */
-const escapeSpecialChars = content => content.replace(/\`/g, '\\\\`') // eslint-disable-line no-useless-escape
+const escapeSpecialChars = content => content ? content.replace(/\`/g, '\\\\`') : ''// eslint-disable-line no-useless-escape
 
 /**
  * Pushes content in to a new paragraph by adding newlines
@@ -79,7 +79,7 @@ const toParagraph = content => content ? `\n\n${trim(content)}` : ''
  *
  * @returns {string} returns the input with pieps converted to newlines
  */
-const addNewlines = content => content.split('|').join('\n')
+const addNewlines = content => content ? content.split('|').join('\n') : ''
 
 /**
  * Converts comma separated lists into hyphen lists
@@ -96,7 +96,7 @@ const toList = content => content ? content.split(',').map(x => `\n - ${trim(x)}
  *
  * @returns {string} returns the prefixed issue (e.g. #ABC-1 or #1)
  */
-const prefixIssue = (issue, prefix = null) => `${(prefix ? `#${prefix}-` : `#`)}${issue}`
+const prefixIssue = (issue, prefix = null) => issue ? `${(prefix ? `#${prefix}-` : `#`)}${issue}` : ''
 
 /**
  * Converts comma separated lists into hyphen lists with an optional prefix
@@ -135,7 +135,7 @@ const addLabel = (label, content) => content ? `${trim(label)}: ${content}` : ''
  *
  * @returns {string} returns the first line of the commit clipped at defined maxLength
  */
-const firstLine = (type, subject, scope = null) => clipLine(`${type}${addScope(scope)}:  ${trim(subject)}`)
+const firstLine = (type, subject, scope = null) => type ? clipLine(`${type}${addScope(scope)}:  ${trim(subject)}`) : ''
 
 /**
  * Creates an issue block respecting the issue settings
@@ -146,7 +146,15 @@ const firstLine = (type, subject, scope = null) => clipLine(`${type}${addScope(s
  *
  * @returns {string}
  */
-const createIssueBlock = (issues, prefix) => toParagraph(addLabel('ISSUES CLOSED', toIssueList(wrapContent(issues), prefix)))
+const createIssueBlock = (issues, prefix) => issues ? toParagraph(addLabel('ISSUES CLOSED', toIssueList(wrapContent(issues), prefix))) : ''
+
+/**
+ * Create a breaking changes block
+ * @param  {string} options.type
+ * @param  {string} options.breaking
+ * @return {string}
+ */
+const createBreakingBlock = ({type, breaking}) => (trim(type) === 'fix' || trim(type) === 'feat') ? toParagraph(addLabel('BREAKING CHANGE', wrapContent(breaking))) : ''
 
 export {
   pluginName,
@@ -164,7 +172,8 @@ export {
   addScope,
   addLabel,
   firstLine,
-  createIssueBlock
+  createIssueBlock,
+  createBreakingBlock
 }
 
 export default {
@@ -183,5 +192,6 @@ export default {
   addScope,
   addLabel,
   firstLine,
-  createIssueBlock
+  createIssueBlock,
+  createBreakingBlock
 }

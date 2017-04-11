@@ -8,11 +8,11 @@ import {issueSettings} from './issue-settings'
 import {
   firstLine,
   wrapContent,
-  addLabel,
   addNewlines,
   toParagraph,
   createIssueBlock,
-  escapeSpecialChars
+  escapeSpecialChars,
+  createBreakingBlock
 } from './helpers'
 
 /**
@@ -27,11 +27,11 @@ import {
  *
  * @returns {string} returns full commit message
  */
-const buildCommit = answers => {
+const buildCommit = (answers, prefix = issueSettings.prefix) => {
   const head = firstLine(answers.type, answers.subject, answers.scope)
   const body = toParagraph(addNewlines(wrapContent(answers.body)))
-  const breaking = toParagraph(addLabel('BREAKING CHANGE', wrapContent(answers.breaking)))
-  const issuesClosed = createIssueBlock(answers.issuesClosed, issueSettings.prefix)
+  const breaking = createBreakingBlock(answers)
+  const issuesClosed = createIssueBlock(answers.issuesClosed, prefix)
   const promptQueue = [
     head,
     body,
