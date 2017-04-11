@@ -36,13 +36,12 @@ const types = [
   },
   {
     value: 'test',
-    name: `test:
-     Adding missing tests`
+    name: `test:     Adding missing tests`
   },
   {
     value: 'chore',
     name: `chore:    Changes to the build process or auxiliary tools
-     and libraries such as documentation generation`
+            and libraries such as documentation generation`
   },
   {
     value: 'revert',
