@@ -23,8 +23,7 @@ A commititizen helper with advanced issue config.
 - [Links](#links)
 - [Getting started](#getting-started)
 - [Developing](#developing)
-  * [Examples (serves docs-folder/gh-pages)](#examples-serves-docs-foldergh-pages)
-  * [setup](#setup)
+- [setup](#setup)
 
 <!-- tocstop -->
 
@@ -48,21 +47,7 @@ To start a dev server and start developing try the following commands
 * `test`: runs test and lints files
 * `run lint`: lints javascript files
 
-### Examples (serves docs-folder/gh-pages)
-
-**Starts a simple http-server**
-
-```shell
-npm start
-```
-
-**Starts a simple http-server and watches files**
-
-```shell
-npm run dev
-```
-
-### setup
+## setup
 
 to setup the plugin simply extend you config in your `package.json`
 
