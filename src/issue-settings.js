@@ -24,8 +24,10 @@ const readIssueSettings = (fallback = {}) => {
         return czConfig.issues || fallback
       }
     }
+    // istanbul ignore next
     return fallback
   }
+  // istanbul ignore next
   log.warn(`Unable to find a configuration file. Please refer to documentation to learn how to set up: https://github.com/sinnerschrader/${pluginName}"`)
 }
 /**

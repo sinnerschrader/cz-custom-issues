@@ -72,6 +72,9 @@
       "path": "./lib/index.js"
     },
     "cz-custom-issues": {
+      "issues": {
+        "type": "git"
+      },
       "config": "lib/cz-config.example.js"
     }
   },
