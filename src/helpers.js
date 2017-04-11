@@ -77,7 +77,7 @@ const toParagraph = content => content ? `\n\n${trim(content)}` : ''
  * Converts pipes to newlines
  * @param   {string} content
  *
- * @returns {string} returns the input with pieps converted to newlines
+ * @returns {string} returns the input with pipes converted to newlines
  */
 const addNewlines = content => content ? content.split('|').join('\n') : ''
 
@@ -85,14 +85,14 @@ const addNewlines = content => content ? content.split('|').join('\n') : ''
  * Converts comma separated lists into hyphen lists
  * @param   {string} content
  *
- * @returns {string} returns the input coverted to a list
+ * @returns {string} returns the input converted to a list
  */
 const toList = content => content ? content.split(',').map(x => `\n - ${trim(x)}`).join('') : ''
 
 /**
  * Prefix issues with a project key/prefix
  * @param  {string} issue  issue name (usually a number e.g. 1)
- * @param  {string|null} [prefix=null] peefix for issue (e.g. for Jira: ABC)
+ * @param  {string|null} [prefix=null] prefix for issue (e.g. for Jira: ABC)
  *
  * @returns {string} returns the prefixed issue (e.g. #ABC-1 or #1)
  */
@@ -102,12 +102,12 @@ const prefixIssue = (issue, prefix = null) => issue ? `${(prefix ? `#${prefix}-`
  * Converts comma separated lists into hyphen lists with an optional prefix
  * @param   {string} content
  *
- * @returns {string} returns the input coverted to a list with prefixed labels
+ * @returns {string} returns the input converted to a list with prefixed labels
  */
 const toIssueList = (content, prefix = null) => content ? content.split(',').map(x => `\n - ${prefixIssue(trim(x), prefix)}`).join('') : ''
 
 /**
- * Add scope and wrap in parenthses (optional)
+ * Add scope and wrap in parentheses (optional)
  * @param   {string} [content=null] the name of the scope
  *
  * @returns {string} returns the scope wrapped in parentheses or an empty string

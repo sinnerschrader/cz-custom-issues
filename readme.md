@@ -39,7 +39,7 @@ A commititizen helper with advanced issue config.
 
 ## Example output
 
-The output follow the [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
+The output follows the [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
 and is easy to read for reviewers or project managers.
 
 ```shell
@@ -107,7 +107,7 @@ ISSUES CLOSED:
 
 ## Config
 
-You can add your own flow to comitizen. See [cz-customizable](https://github.com/leonardoanalista/cz-customizable) for the original implementation.
+You can add your own flow to commitizen. See [cz-customizable](https://github.com/leonardoanalista/cz-customizable) for the original implementation.
 
 ### types
 
@@ -185,7 +185,7 @@ Toggle custom scopes
 
 ### allowBreakingChanges
 
-Limit breaking chages to types
+Limit breaking changes to types
 
 - allowBreakingChanges
   - [...types]

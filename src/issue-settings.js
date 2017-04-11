@@ -10,8 +10,8 @@ import log from 'winston'
 import {pluginName} from './helpers'
 
 /**
- * Reads the issue configurtion from config block in `package.json`
- * @param  {object} [fallback={}] fallbcak object in case no config was found
+ * Reads the issue configuration from config block in `package.json`
+ * @param  {object} [fallback={}] fallback object in case no config was found
  * @returns {issueConfig} returns an object containing the config
  */
 const readIssueSettings = (fallback = {}) => {
@@ -30,7 +30,7 @@ const readIssueSettings = (fallback = {}) => {
 }
 /**
  * @typedef issueConfig
- * @prop {string} [type] defines the type of platform (jirs | git)
+ * @prop {string} [type] defines the type of platform (jira | git)
  *                     currently not used
  * @prop {string|null} [prefix] when set issues will be prefixed by this identifier
  */
