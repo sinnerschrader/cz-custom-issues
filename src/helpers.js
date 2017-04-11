@@ -129,9 +129,9 @@ const addLabel = (label, content) => content ? `${trim(label)}: ${content}` : ''
 
 /**
  * Hard limit the first line of a commit message
- * @param   {string} type       type of commit
- * @param   {string} subject    subject of commit (includes body, footer, etc.)
- * @param   {string} [scope=''] optional scope of feature
+ * @param   {string}      type         type of commit
+ * @param   {string}      subject      subject of commit (includes body, footer, etc.)
+ * @param   {string|null} [scope=null] optional scope of feature
  *
  * @returns {string} returns the first line of the commit clipped at defined maxLength
  */
@@ -140,9 +140,7 @@ const firstLine = (type, subject, scope = null) => type ? clipLine(`${type}${add
 /**
  * Creates an issue block respecting the issue settings
  * @param   {string}      issues
- * @param   {object}      issueSettings
- * @param   {string}      issueSettings.type
- * @param   {string|null} [ssueSettings.pefix=null]
+ * @param   {string}      prefix
  *
  * @returns {string}
  */

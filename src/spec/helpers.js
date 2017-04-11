@@ -14,7 +14,9 @@ import {
   toIssueList,
   addScope,
   addLabel,
-  firstLine
+  firstLine,
+  createIssueBlock,
+  createBreakingBlock
 } from '../helpers'
 
 const longString = 'Quasi dolorem eveniet doloribus quia non est asperiores. Doloremque occaecati dolore quia ipsam non vero eveniet. Perspiciatis autem omnis suscipit. Et et dolor rerum. Cupiditate suscipit iure ea dicta.'
@@ -89,4 +91,35 @@ test('firstLine() transforms the first line', t => {
   t.true(firstLine('feat', 'foo') === 'feat:  foo')
   t.true(firstLine('feat', 'foo', 'bar') === 'feat(bar):  foo')
   t.true(firstLine('feat', longString).length <= maxWidth)
+})
+
+test('createIssueBlock() creates an issue block', t => {
+  const block = createIssueBlock('123: foo, 124: bar')
+  t.true(typeof block === 'string')
+  t.true(block !== '')
+  t.true(Boolean(block.match('ISSUES CLOSED:')))
+})
+
+test('createIssueBlock() returns an empty string if empty', t => {
+  t.true(createIssueBlock() === '')
+})
+
+test('createBreakingBlock() creates a breaking block', t => {
+  const block = createBreakingBlock({type: 'fix', breaking: 'foo'})
+  t.true(typeof block === 'string')
+  t.true(block !== '')
+  t.true(Boolean(block.match('BREAKING CHANGE:')))
+})
+
+test('createBreakingBlock() returns an empty string if not fix or feat', t => {
+  t.true(createBreakingBlock({type: 'docs', breaking: 'foo'}) === '')
+})
+
+test('createBreakingBlock() returns an filled string if fix or feat', t => {
+  const fix = createBreakingBlock({type: 'fix', breaking: 'foo'})
+  const feat = createBreakingBlock({type: 'feat', breaking: 'foo'})
+  t.true(typeof fix === 'string')
+  t.true(fix !== '')
+  t.true(typeof feat === 'string')
+  t.true(feat !== '')
 })
