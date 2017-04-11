@@ -41,6 +41,12 @@ test(`clipLine() clips at ${maxWidth} chars length`, t => {
   t.true(clipLine(longString).length <= maxWidth)
 })
 
+test('clipLine() returns an empty string as fallback', t => {
+  const clipped = clipLine(null)
+  t.true(typeof clipped === 'string')
+  t.true(clipped === '')
+})
+
 test('escapeSpecialChars() escapes backticks', t => {
   t.true(escapeSpecialChars('`BACKTICKED`') === '\\\\`BACKTICKED\\\\`')
 })
