@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>build-commit - Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="main-nav">
+    <header class="nav-header"><h2><a href="index.html">Home</a></h2></header><header class="nav-header"><h3><span>Modules</span></h3></header><ul><li><a href="cz-config.module_example.html">cz-config.example</a><ul class='members'><li class='nav-type-header'>Members</li><li data-type='member'><a href="cz-config.module_example.html#~allowBreakingChanges">allowBreakingChanges</a></li><li data-type='member'><a href="cz-config.module_example.html#~allowCustomScopes">allowCustomScopes</a></li><li data-type='member'><a href="cz-config.module_example.html#~scopeOverrides">scopeOverrides</a></li><li data-type='member'><a href="cz-config.module_example.html#~scopes">scopes</a></li><li data-type='member'><a href="cz-config.module_example.html#~types">types</a></li></ul></li><li><a href="module-build-commit.html">build-commit</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-build-commit.html#~buildCommit">buildCommit</a></li></ul></li><li><a href="module-helpers.html">helpers</a><ul class='members'><li class='nav-type-header'>Members</li><li data-type='member'><a href="module-helpers.html#~maxWidth">maxWidth</a></li><li data-type='member'><a href="module-helpers.html#~pluginName">pluginName</a></li><li data-type='member'><a href="module-helpers.html#~wrapOptions">wrapOptions</a></li></ul><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-helpers.html#~addLabel">addLabel</a></li><li data-type='method'><a href="module-helpers.html#~addNewlines">addNewlines</a></li><li data-type='method'><a href="module-helpers.html#~addScope">addScope</a></li><li data-type='method'><a href="module-helpers.html#~clipLine">clipLine</a></li><li data-type='method'><a href="module-helpers.html#~createIssueBlock">createIssueBlock</a></li><li data-type='method'><a href="module-helpers.html#~escapeSpecialChars">escapeSpecialChars</a></li><li data-type='method'><a href="module-helpers.html#~firstLine">firstLine</a></li><li data-type='method'><a href="module-helpers.html#~prefixIssue">prefixIssue</a></li><li data-type='method'><a href="module-helpers.html#~toIssueList">toIssueList</a></li><li data-type='method'><a href="module-helpers.html#~toList">toList</a></li><li data-type='method'><a href="module-helpers.html#~toParagraph">toParagraph</a></li><li data-type='method'><a href="module-helpers.html#~trim">trim</a></li><li data-type='method'><a href="module-helpers.html#~wrapContent">wrapContent</a></li></ul></li><li><a href="module-index.html">index</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-index.html#~prompter">prompter</a></li></ul></li><li><a href="module-issue-settings.html">issue-settings</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-issue-settings.html#~readIssueSettings">readIssueSettings</a></li></ul><ul class='typedefs'><li class='nav-type-header'>Typedefs</li><li data-type='typedef'><a href="module-issue-settings.html#~issueConfig">issueConfig</a></li></ul></li><li><a href="module-questions.html">questions</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-questions.html#~getQuestions">getQuestions</a></li><li data-type='method'><a href="module-questions.html#~isNotWIP">isNotWIP</a></li><li data-type='method'><a href="module-questions.html#~isWIP">isWIP</a></li></ul></li><li><a href="module-read-config.html">read-config</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-read-config.html#~readConfigFile">readConfigFile</a></li></ul></li></ul>
+</nav>
+
+<main id="main" class="main-content">
+    <section>
+    <h1 class="page-title">build-commit</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+    <div  class="card">
+            <div class="description"><p>src/build-commit.js</p></div>
+    </div>
+        
+
+        
+            
+<article class="card card__module" id="build-commit">
+
+
+<section class="code-source">
+  <div class="link-box">
+    
+    <a href="build-commit.js.html">build-commit.js</a> <a href="build-commit.js.html#line1">line 1</a>
+    
+  </div>
+</section>
+
+
+    
+      <h2 >build-commit</h2>
+    
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:greg@pixelass.com">Gregor Adams</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </article>
+
+        
+    
+    </div>
+    
+
+    
+
+    
+
+     
+
+    
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<article class="card card__function" id="~buildCommit">
+
+
+<section class="code-source">
+  <div class="link-box">
+    
+    <a href="build-commit.js.html">build-commit.js</a> <a href="build-commit.js.html#line30">line 30</a>
+    
+  </div>
+</section>
+
+
+    
+      <h2 >buildCommit</h2>
+    
+    
+        
+
+        <h4 class="name"><span class="type-signature">(inner) </span>buildCommit<span class="signature">(answers)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+    
+    <div class="description">
+        <p>builds the commit message</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+<div class="table-scroll">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>answers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-object"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank">object</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>an object containing answers from the prompt</p>
+                <h6>Properties</h6>
+                
+<div class="table-scroll">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>type of commit</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>short info about commit</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scope</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional scope</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>long info about commit</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>issuesClosed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>liust of issues closed by this commit</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>breaking</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>list of breaking changes due to this commit</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</div>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</div>
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>returns full commit message</p>
+</div>
+
+
+
+<dl class="details">
+    <dt>
+        Type
+    </dt>
+    <dd>
+      <!--%= data.type.names ?-->
+      
+<span class="__tag param-type param-type-string"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>
+
+</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+    </article>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    </section>
+</main>
+
+
+<footer class="main-footer">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Apr 11 2017 14:49:02 GMT+0200 (CEST)
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

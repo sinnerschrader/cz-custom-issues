@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>cz-config.example.js - Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="main-nav">
+    <header class="nav-header"><h2><a href="index.html">Home</a></h2></header><header class="nav-header"><h3><span>Modules</span></h3></header><ul><li><a href="cz-config.module_example.html">cz-config.example</a><ul class='members'><li class='nav-type-header'>Members</li><li data-type='member'><a href="cz-config.module_example.html#~allowBreakingChanges">allowBreakingChanges</a></li><li data-type='member'><a href="cz-config.module_example.html#~allowCustomScopes">allowCustomScopes</a></li><li data-type='member'><a href="cz-config.module_example.html#~scopeOverrides">scopeOverrides</a></li><li data-type='member'><a href="cz-config.module_example.html#~scopes">scopes</a></li><li data-type='member'><a href="cz-config.module_example.html#~types">types</a></li></ul></li><li><a href="module-build-commit.html">build-commit</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-build-commit.html#~buildCommit">buildCommit</a></li></ul></li><li><a href="module-helpers.html">helpers</a><ul class='members'><li class='nav-type-header'>Members</li><li data-type='member'><a href="module-helpers.html#~maxWidth">maxWidth</a></li><li data-type='member'><a href="module-helpers.html#~pluginName">pluginName</a></li><li data-type='member'><a href="module-helpers.html#~wrapOptions">wrapOptions</a></li></ul><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-helpers.html#~addLabel">addLabel</a></li><li data-type='method'><a href="module-helpers.html#~addNewlines">addNewlines</a></li><li data-type='method'><a href="module-helpers.html#~addScope">addScope</a></li><li data-type='method'><a href="module-helpers.html#~clipLine">clipLine</a></li><li data-type='method'><a href="module-helpers.html#~createIssueBlock">createIssueBlock</a></li><li data-type='method'><a href="module-helpers.html#~escapeSpecialChars">escapeSpecialChars</a></li><li data-type='method'><a href="module-helpers.html#~firstLine">firstLine</a></li><li data-type='method'><a href="module-helpers.html#~prefixIssue">prefixIssue</a></li><li data-type='method'><a href="module-helpers.html#~toIssueList">toIssueList</a></li><li data-type='method'><a href="module-helpers.html#~toList">toList</a></li><li data-type='method'><a href="module-helpers.html#~toParagraph">toParagraph</a></li><li data-type='method'><a href="module-helpers.html#~trim">trim</a></li><li data-type='method'><a href="module-helpers.html#~wrapContent">wrapContent</a></li></ul></li><li><a href="module-index.html">index</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-index.html#~prompter">prompter</a></li></ul></li><li><a href="module-issue-settings.html">issue-settings</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-issue-settings.html#~readIssueSettings">readIssueSettings</a></li></ul><ul class='typedefs'><li class='nav-type-header'>Typedefs</li><li data-type='typedef'><a href="module-issue-settings.html#~issueConfig">issueConfig</a></li></ul></li><li><a href="module-questions.html">questions</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-questions.html#~getQuestions">getQuestions</a></li><li data-type='method'><a href="module-questions.html#~isNotWIP">isNotWIP</a></li><li data-type='method'><a href="module-questions.html#~isWIP">isWIP</a></li></ul></li><li><a href="module-read-config.html">read-config</a><ul class='methods'><li class='nav-type-header'>Methods</li><li data-type='method'><a href="module-read-config.html#~readConfigFile">readConfigFile</a></li></ul></li></ul>
+</nav>
+
+<main id="main" class="main-content">
+    <section>
+    <h1 class="page-title">cz-config.example.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file src/cz-config.example.js
+ * @module cz-config.example
+ * @author Gregor Adams &lt;greg@pixelass.com>
+ */
+
+/**
+ * a list of commit types
+ * @type {Array}
+ */
+const types = [
+  {
+    value: 'feat',
+    name: `feat:     A new feature`
+  },
+  {
+    value: 'fix',
+    name: `fix:      A bug fix`
+  },
+  {
+    value: 'docs',
+    name: `docs:     Documentation only changes`
+  },
+  {
+    value: 'style',
+    name: `style:    Changes that do not affect the meaning of the code
+            (white-space, formatting, missing semi-colons, etc)`
+  },
+  {
+    value: 'refactor',
+    name: 'refactor: A code change that neither fixes a bug nor adds a feature'
+  },
+  {
+    value: 'perf',
+    name: `perf:     A code change that improves performance`
+  },
+  {
+    value: 'test',
+    name: `test:
+     Adding missing tests`
+  },
+  {
+    value: 'chore',
+    name: `chore:    Changes to the build process or auxiliary tools
+     and libraries such as documentation generation`
+  },
+  {
+    value: 'revert',
+    name: `revert:    Revert to a commit`
+  },
+  {
+    value: 'WIP',
+    name: `WIP:      Work in progress`
+  }
+]
+
+/**
+ * default scopes
+ * @type {Array}
+ */
+const scopes = [
+  {name: 'new'},
+  {name: 'change'},
+  {name: 'addition'}
+]
+
+/**
+ * custom overrides for types
+ * @type {Object}
+ */
+const scopeOverrides = {
+  fix: [
+    {name: 'windows'},
+    {name: 'osx'},
+    {name: 'linux'}
+  ],
+  docs: [
+    {name: 'new'},
+    {name: 'change'},
+    {name: 'readme'}
+  ],
+  style: [
+    {name: 'format'},
+    {name: 'whitespace'},
+    {name: 'lint-happy'},
+    {name: 'indents'}
+  ]
+}
+
+/**
+ * allow custom scopes?
+ * @type {Boolean}
+ */
+const allowCustomScopes = true
+
+/**
+ * list of types that allow breaking changes
+ * @type {Array}
+ */
+const allowBreakingChanges = ['feat', 'fix']
+
+export {
+  types,
+  scopes,
+  allowCustomScopes,
+  allowBreakingChanges,
+  scopeOverrides
+}
+
+export default {
+  types,
+  scopes,
+  allowCustomScopes,
+  allowBreakingChanges,
+  scopeOverrides
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+    </section>
+</main>
+
+
+<footer class="main-footer">
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Apr 11 2017 14:49:02 GMT+0200 (CEST)
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

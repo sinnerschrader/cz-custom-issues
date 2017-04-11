@@ -2,12 +2,14 @@
 
 A modern boilerplate for npm things with wings.
 
+[![npm](https://img.shields.io/npm/v/cz-custom-issues.svg?style=flat-square)](https://www.npmjs.com/package/cz-custom-issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/sinnerschrader/cz-custom-issues/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/sinnerschrader/cz-custom-issues.svg?style=flat-square)](https://github.com/sinnerschrader/cz-custom-issues/issues)
 [![Coveralls](https://img.shields.io/coveralls/sinnerschrader/cz-custom-issues.svg?style=flat-square)](https://coveralls.io/github/sinnerschrader/cz-custom-issues)
 [![bitHound](https://img.shields.io/bithound/code/github/sinnerschrader/cz-custom-issues.svg?style=flat-square)](https://www.bithound.io/github/sinnerschrader/cz-custom-issues)
 [![bitHound](https://img.shields.io/bithound/devDependencies/github/sinnerschrader/cz-custom-issues.svg?style=flat-square)](https://www.bithound.io/github/sinnerschrader/cz-custom-issues)
 
+[![Babel](https://img.shields.io/badge/babel-stage--2-f5da55.svg?style=flat-square)](http://babeljs.io/docs/plugins/preset-stage-2/)
 [![code style xo](https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 [![test ava](https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square)](https://github.com/avajs/ava)
@@ -19,17 +21,8 @@ A modern boilerplate for npm things with wings.
 
 - [Links](#links)
 - [Getting started](#getting-started)
-- [Reset git](#reset-git)
-- [Run package config](#run-package-config)
 - [Developing](#developing)
-  * [Examples](#examples)
-- [What's included?](#whats-included)
-  * [Transforms](#transforms)
-  * [Coding style](#coding-style)
-  * [Code quality](#code-quality)
-  * [Testing](#testing)
-  * [Documentation](#documentation)
-  * [CSS (optional)](#css-optional)
+  * [Examples (serves docs-folder/gh-pages)](#examples-serves-docs-foldergh-pages)
 
 <!-- tocstop -->
 
@@ -74,4 +67,28 @@ npm start
 ```shell
 npm run dev
 ```
+
+###setup
+
+to setup the plugin simply extend you config in your `package.json`
+
+```json
+{
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-custom-issues"
+    },
+    "cz-custom-issues": {
+      "issues": {
+        "type": "jira",
+        "prefix": "ABC"
+      },
+      "config": "./cz-config.js"
+    }
+  }
+}
+```
+
+Take a look at the [example config file](https://github.com/sinnerschrader/cz-custom-issues/cz-config.example.js) to see the available options.
+
 
