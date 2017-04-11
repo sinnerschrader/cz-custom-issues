@@ -1,8 +1,9 @@
 # CZ CUSTOM ISSUES
 
-A modern boilerplate for npm things with wings.
+A commititizen helper with advanced issue config.
 
 [![npm](https://img.shields.io/npm/v/cz-custom-issues.svg?style=flat-square)](https://www.npmjs.com/package/cz-custom-issues)
+[![Travis branch](https://img.shields.io/travis/sinnerschrader/cz-custom-issues/master.svg?style=flat-square)](https://travis-ci.org/sinnerschrader/cz-custom-issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/sinnerschrader/cz-custom-issues/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/sinnerschrader/cz-custom-issues.svg?style=flat-square)](https://github.com/sinnerschrader/cz-custom-issues/issues)
 [![Coveralls](https://img.shields.io/coveralls/sinnerschrader/cz-custom-issues.svg?style=flat-square)](https://coveralls.io/github/sinnerschrader/cz-custom-issues)
