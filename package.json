@@ -96,7 +96,9 @@
   },
   "nyc": {
     "exclude": [
-      "src/**/spec/*.js"
+      "src/**/spec/*.js",
+      "src/issue-settings.js",
+      "src/read-config.js"
     ]
   },
   "xo": {

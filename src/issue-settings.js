@@ -16,7 +16,6 @@ import {pluginName} from './helpers'
  */
 const readIssueSettings = (fallback = {}) => {
   const pkg = findConfig.require('package.json', {home: false})
-  // istanbul ignore if
   if (pkg) {
     const {config} = pkg
     if (config && pluginName in config) {

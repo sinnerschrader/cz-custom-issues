@@ -41,12 +41,6 @@ test(`clipLine() clips at ${maxWidth} chars length`, t => {
   t.true(clipLine(longString).length <= maxWidth)
 })
 
-test('clipLine() returns an epmty string as fallback', t => {
-  const clip = clipLine('')
-  t.true(typeof clip === 'string')
-  t.true(clip === '')
-})
-
 test('escapeSpecialChars() escapes backticks', t => {
   t.true(escapeSpecialChars('`BACKTICKED`') === '\\\\`BACKTICKED\\\\`')
 })
@@ -55,7 +49,7 @@ test('wrapContent() wraps lines', t => {
   t.true(wrapContent(longString + longString).length > 1)
 })
 
-test('wrapContent() returns an epmty string as fallback', t => {
+test('wrapContent() returns an empty string as fallback', t => {
   const wrap = wrapContent('')
   t.true(typeof wrap === 'string')
   t.true(wrap === '')
@@ -74,7 +68,7 @@ test('toList() converts `,` to list-items', t => {
   t.true(list.length === 4)
 })
 
-test('toList() returns an epmty string as fallback', t => {
+test('toList() returns an empty string as fallback', t => {
   const list = toList('')
   t.true(typeof list === 'string')
   t.true(list === '')
@@ -85,7 +79,7 @@ test('toIssueList() converts `,` to issue-items', t => {
   t.true(list.length === 4)
 })
 
-test('toIssueList() returns an epmty string as fallback', t => {
+test('toIssueList() returns an empty string as fallback', t => {
   const list = toIssueList('')
   t.true(typeof list === 'string')
   t.true(list === '')
@@ -99,7 +93,7 @@ test('prefixIssue() prefixes issues with a hash and prefix', t => {
   t.true(prefixIssue('12', 'ABC') === '#ABC-12')
 })
 
-test('prefixIssue() returns an epmty string as fallback', t => {
+test('prefixIssue() returns an empty string as fallback', t => {
   const issue = prefixIssue(null, 'ABC')
   t.true(typeof issue === 'string')
   t.true(issue === '')

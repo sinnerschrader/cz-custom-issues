@@ -39,7 +39,7 @@ const wrapOptions = {
  *
  * @returns {string} returns the wrapped content or an empty string
  */
-const wrapContent = content => content ? wrap(content, wrapOptions) || '' : ''
+const wrapContent = content => content ? wrap(content, wrapOptions) : ''
 
 /**
  * Trims the content and returns
