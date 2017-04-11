@@ -5,7 +5,7 @@
  */
 
 /**
- * a list of commit types
+ * A list of commit types
  * @type {array}
  */
 const types = [
@@ -55,7 +55,7 @@ const types = [
 ]
 
 /**
- * default scopes
+ * Default scopes
  * @type {array}
  */
 const scopes = [
@@ -65,7 +65,7 @@ const scopes = [
 ]
 
 /**
- * custom overrides for types
+ * Custom overrides for types
  * @type {object}
  */
 const scopeOverrides = {
@@ -88,13 +88,13 @@ const scopeOverrides = {
 }
 
 /**
- * allow custom scopes?
+ * Allow custom scopes?
  * @type {boolean}
  */
 const allowCustomScopes = true
 
 /**
- * list of types that allow breaking changes
+ * List of types that allow breaking changes
  * @type {array}
  */
 const allowBreakingChanges = ['feat', 'fix']

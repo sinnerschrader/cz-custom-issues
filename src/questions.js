@@ -8,21 +8,21 @@ import log from 'winston'
 import buildCommit from './build-commit'
 
 /**
- * check for WIP commits
+ * Check for WIP commits
  * @param   {string} options.type
  * @returns {boolean} returns `true` if the type is `WIP`
  */
 const isWIP = ({type}) => type.toLowerCase() === 'wip'
 
 /**
- * negated check for WIP commits
+ * Negated check for WIP commits
  * @param   {string} options.type
  * @returns {boolean} returns `false` if the type is `WIP`
  */
 const isNotWIP = answers => !isWIP(answers)
 
 /**
- * [description]
+ * Gt questions for prompt
  * @param   {object}  scopeOverrides
  * @param   {array}   types
  * @param   {array}   scopes

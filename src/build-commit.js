@@ -16,7 +16,7 @@ import {
 } from './helpers'
 
 /**
- * builds the commit message
+ * Builds the commit message
  * @param   {object} answers an object containing answers from the prompt
  * @param   {string} answers.type type of commit
  * @param   {string} answers.subject short info about commit

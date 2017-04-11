@@ -11,7 +11,7 @@ import log from 'winston'
 import {pluginName} from './helpers'
 
 /**
- * reads the config file and offers as export
+ * Reads the config file and offers as export
  * @returns {object} returns the imported file as a module
  */
 const readConfigFile = () => {

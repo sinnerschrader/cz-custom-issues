@@ -17,7 +17,7 @@ import {maxWidth} from './helpers'
 const temp = track()
 
 /**
- * builds a commit message from prompt answers
+ * Builds a commit message from prompt answers
  * @param   {object} cz
  * @param   {function} commit
  * @returns {string} returns the commit message

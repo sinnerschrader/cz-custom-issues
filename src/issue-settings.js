@@ -10,7 +10,7 @@ import log from 'winston'
 import {pluginName} from './helpers'
 
 /**
- * reads the issue configurtion from config block in `package.json`
+ * Reads the issue configurtion from config block in `package.json`
  * @param  {object} [fallback={}] fallbcak object in case no config was found
  * @returns {issueConfig} returns an object containing the config
  */
