@@ -33,8 +33,6 @@ A commititizen helper with advanced issue config.
 
 ## Getting started
 
-Clone this repository and use it as a starting point.
-
 ```shell
 ## use yarn
 yarn add cz-custom-issues -D
@@ -46,14 +44,8 @@ yarn add cz-custom-issues -D
 
 To start a dev server and start developing try the following commands
 
-* `start`: starts the dev server and builds the required files
 * `test`: runs test and lints files
-* `run dev`: starts the dev server and watches the required files
-* `run babel`: generates lib from source
-* `run build`: builds all files from source
-* `run watch`: builds and watches all files from source
 * `run lint`: lints javascript files
-* `run release`: release new version using "standard-version"
 
 ### Examples (serves docs-folder/gh-pages)
 
@@ -69,7 +61,7 @@ npm start
 npm run dev
 ```
 
-###setup
+### setup
 
 to setup the plugin simply extend you config in your `package.json`
 
