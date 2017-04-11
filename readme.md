@@ -89,6 +89,6 @@ to setup the plugin simply extend you config in your `package.json`
 }
 ```
 
-Take a look at the [example config file](https://github.com/sinnerschrader/cz-custom-issues/cz-config.example.js) to see the available options.
+Take a look at the [example config file](https://github.com/sinnerschrader/cz-custom-issues/blob/master/cz-config.example.js) to see the available options.
 
 
