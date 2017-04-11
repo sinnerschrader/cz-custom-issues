@@ -75,7 +75,7 @@
       "issues": {
         "type": "git"
       },
-      "config": "lib/cz-config.example.js"
+      "config": "cz-config.js"
     }
   },
   "browserify": {
