@@ -54,6 +54,7 @@
     "browserify": "^14.3.0",
     "coveralls": "^2.13.0",
     "errorify": "^0.3.1",
+    "eslint-plugin-spellcheck": "^0.0.8",
     "hopsdoc": "^0.1.7",
     "http-server": "^0.9.0",
     "husky": "^0.13.3",
@@ -102,8 +103,41 @@
     ]
   },
   "xo": {
+    "plugins": ["spellcheck"],
     "space": true,
-    "semicolon": false
+    "semicolon": false,
+    "rules": {
+      "spellcheck/spell-checker": [
+        1,
+        {
+          "comments": true,
+          "strings": false,
+          "identifiers": false,
+          "lang": "en_US",
+          "skipWords": [
+            "namespace",
+            "jira",
+            "const",
+            "js",
+            "src",
+            "eslint",
+            "cz",
+            "typedef",
+            "sinnerschrader",
+            "Gregor",
+            "Adams",
+            "pixelass",
+            "greg",
+            "param"
+          ],
+          "skipIfMatch": [
+            "http://[^s]*",
+            "https://[^s]*",
+            "^[-\\w]+\/[-\\w\\.]+$"
+          ]
+        }
+      ]
+    }
   },
   "stylelint": {
     "extends": "stylelint-config-standard",

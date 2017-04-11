@@ -22,7 +22,7 @@ import {
  * @param   {string} answers.subject short info about commit
  * @param   {string} answers.scope optional scope
  * @param   {string} answers.body long info about commit
- * @param   {string} answers.issuesClosed liust of issues closed by this commit
+ * @param   {string} answers.issuesClosed list of issues closed by this commit
  * @param   {string} answers.breaking list of breaking changes due to this commit
  *
  * @returns {string} returns full commit message
